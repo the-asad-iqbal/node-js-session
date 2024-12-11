@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import { config } from "dotenv";
 
 import connectDB from "./src/config/dbConfig.js";
@@ -17,9 +18,10 @@ app.use(
 );
 
 app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api/v1/user", userRoute);
 
-app.listen(8080, () => {
-  console.log("server is running on port 8080");
+app.listen(3000, () => {
+  console.log("server is running on port 3000");
 });
